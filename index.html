@@ -1,1 +1,45 @@
-<h1>Helloo</h1>
+<!DOCTYPE html>
+<html lang="sk">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+		integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+		crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<link rel="stylesheet" href="./css/style.css">
+
+	<script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+	<title>Registrácia</title>
+
+	<script src="js/app.js" defer></script>
+</head>
+
+<body>
+	<div id="app" class="wrapper">
+		<main>
+			<section class="offer">
+				<ol class="list">
+					<li v-for="item in items">
+						<div class="title" :class="{sold : item.count == 0}">{{item.title}} </div>
+						<div class="controls">
+							<a class="controls__item arrow" @click.prevent="countDown(item); window.navigator.vibrate(200)">
+								<i class="fas fa-minus"></i>
+							</a>
+
+							<input type="number" class="controls__item count" :class="{warning : item.count <= 10}"
+								v-model="item.count" v-on:keyup="save()"></input>
+
+							<a class=" controls__item arrow" @click.prevent="countUp(item); window.navigator.vibrate(200)">
+								<i class="fas fa-plus"></i>
+							</a>
+						</div>
+					</li>
+				</ol>
+			</section>
+		</main>
+	</div>
+</body>
+
+</html>
