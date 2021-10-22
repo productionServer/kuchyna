@@ -42,6 +42,18 @@ var app = new Vue({
 			return value && JSON.parse(value);
 		};
 
+		// element which needs to enter full-screen mode
+		var element = document.querySelector("body");
+
+		// make the element go to full-screen mode
+		element.requestFullscreen()
+			.then(function() {
+				// element has entered fullscreen mode successfully
+			})
+			.catch(function(error) {
+				// element could not enter fullscreen mode
+			});
+
 		save = () => {
 			localStorage.setStuff("zaznamy", this.items);
 		};
