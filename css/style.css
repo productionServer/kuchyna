@@ -61,7 +61,8 @@ ol {
 }
 
 .list {
-	height: 100vh;
+	margin: 1vh 0;
+	height: 98vh;
 	display: flex;
 	justify-content: space-between;
 	align-content: space-between;
@@ -73,7 +74,6 @@ ol {
 	justify-content: space-between;
 	align-items: center;
 	font-size: 3em;
-	margin-bottom: 3px;
 	padding: 0.4em;
 	border: 2px solid #424242;
 	border-radius: 5px;
